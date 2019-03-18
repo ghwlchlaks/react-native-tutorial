@@ -19,20 +19,11 @@ const instructions = Platform.select({
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    let pic = {
-      uri: 'https://upload.wikimedia.org/wikipedia/commons/d/de/Bananavarieties.jpg'
-    };
     return (
-      <View style={styles.container}>
-        <Greeting name="choi"></Greeting>
-        <Greeting name="jiho"></Greeting>
-        <Blink text="i love to blink"></Blink>
-        <Blink text="yes blink is so great"></Blink>
-        <Image source={pic} style={{width: 193, height:110}} />
-        <Text style={styles.red}>just red</Text>
-        <Text style={styles.bigBlue}>just big blue</Text>
-        <Text style={[styles.bigBlue, styles.red]}>big blue, then red</Text>
-        <Text style={[styles.red, styles.bigBlue]}>red, then big blue</Text>
+      <View style={{flex: 1}}>
+        <View style={{flex:1, backgroundColor: 'powderblue'}}></View>
+        <View style={{flex:2, backgroundColor: 'skyblue'}}></View>
+        <View style={{flex:3, backgroundColor: 'steelblue'}}></View>
       </View>
     );
   }
