@@ -26,11 +26,39 @@ export default class App extends Component<Props> {
       <View style={styles.container}>
         <Greeting name="choi"></Greeting>
         <Greeting name="jiho"></Greeting>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Blink text="i love to blink"></Blink>
+        <Blink text="yes blink is so great"></Blink>
         <Image source={pic} style={{width: 193, height:110}} />
       </View>
     );
   }
+}
+
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isShowingText: true
+    }
+
+    setInterval(() => {
+      this.setState((prevState) => (
+        {isShowingText: !prevState.isShowingText}
+      ))
+    }, 1000)
+  }
+
+  render() {
+    if (!this.state.isShowingText) {
+      return null
+    }
+
+    return (
+      <Text>{this.props.text}</Text>
+    )
+  }
+
 }
 
 class Greeting extends Component {
