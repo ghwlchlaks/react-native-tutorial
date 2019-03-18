@@ -20,10 +20,10 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-      <View style={{flex: 1}}>
-        <View style={{flex:1, backgroundColor: 'powderblue'}}></View>
-        <View style={{flex:2, backgroundColor: 'skyblue'}}></View>
-        <View style={{flex:3, backgroundColor: 'steelblue'}}></View>
+      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch'}}>
+        <View style={{width: 50, height:50, backgroundColor: 'powderblue'}}></View>
+        <View style={{height:50, backgroundColor: 'skyblue'}}></View>
+        <View style={{height:100, backgroundColor: 'steelblue'}}></View>
       </View>
     );
   }
