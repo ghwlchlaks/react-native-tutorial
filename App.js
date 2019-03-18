@@ -29,6 +29,10 @@ export default class App extends Component<Props> {
         <Blink text="i love to blink"></Blink>
         <Blink text="yes blink is so great"></Blink>
         <Image source={pic} style={{width: 193, height:110}} />
+        <Text style={styles.red}>just red</Text>
+        <Text style={styles.bigBlue}>just big blue</Text>
+        <Text style={[styles.bigBlue, styles.red]}>big blue, then red</Text>
+        <Text style={[styles.red, styles.bigBlue]}>red, then big blue</Text>
       </View>
     );
   }
@@ -88,4 +92,12 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+  red: {
+    color: 'red'
+  }
 });
