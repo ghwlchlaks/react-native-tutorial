@@ -7,7 +7,7 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, Image} from 'react-native';
+import {Platform, StyleSheet, Text, View, Image, TextInput} from 'react-native';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -18,12 +18,26 @@ const instructions = Platform.select({
 
 type Props = {};
 export default class App extends Component<Props> {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: ''
+    }
+  }
   render() {
     return (
-      <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'stretch'}}>
-        <View style={{width: 50, height:50, backgroundColor: 'powderblue'}}></View>
-        <View style={{height:50, backgroundColor: 'skyblue'}}></View>
-        <View style={{height:100, backgroundColor: 'steelblue'}}></View>
+      <View style={styles.container}>
+        <TextInput 
+        style={{height: 40}}
+        placeholder='type here to translate!'
+        onChangeText={(text) => this.setState({text})}
+        />
+
+        <Text style={{padding: 10, fontSize: 42}}>
+          {this.state.text.split(' ').map((word) => word).join(' ')}
+        </Text>
+
       </View>
     );
   }
